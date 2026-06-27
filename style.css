@@ -61,6 +61,11 @@ h1, h2, h3 {
     font-size: 1.1rem;
     letter-spacing: -0.5px;
     color: #fff;
+    
+    /* Regras adicionadas para forçar a quebra de linha e evitar o overflow */
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .nav-pill {
