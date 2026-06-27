@@ -419,12 +419,48 @@ footer { text-align: center; padding: 2rem; font-size: 0.8rem; color: #555; marg
    RESPONSIVIDADE GERAL
 ========================================= */
 @media (max-width: 768px) {
-    .nav-container { flex-direction: column; gap: 1rem; }
-    .big-title { font-size: 2.5rem; letter-spacing: -1px; }
-    .mac-body { padding: 40px 20px; }
-    .sub-info { align-self: flex-start; text-align: left; margin-top: 2rem; }
-    h2 { font-size: 2rem; }
-    .timeline { padding-left: 2rem; }
-    .timeline-dot { left: calc(-2rem - 4px); }
+    /* 1. Ajuste do Menu: Muda de 'fixed' para 'absolute' para não bloquear a tela */
+    .nav-premium {
+        position: absolute; 
+        padding: 1.5rem 5%;
+    }
+    .nav-container { 
+        flex-direction: column; 
+        gap: 1.2rem; 
+        text-align: center;
+    }
+    .nav-pill {
+        flex-wrap: wrap; /* Permite que os botões se ajustem melhor */
+        justify-content: center;
+    }
+    .nav-links-right {
+        justify-content: center;
+    }
+
+    /* 2. Ajuste do Hero (Janela do Mac) */
+    .hero-premium {
+        padding-top: 140px; /* Dá espaço para o menu que agora está absoluto no topo */
+    }
+    .big-title { 
+        font-size: 2rem; 
+        letter-spacing: -1px; 
+        margin-bottom: 2rem;
+    }
+    .mac-body { 
+        padding: 30px 20px; 
+        min-height: auto;
+    }
+    .sub-info { 
+        align-self: center; /* Centraliza as informações no celular */
+        text-align: center; 
+        margin-top: 1rem; 
+    }
+
+    /* 3. Ajuste do restante do site */
+    h2 { font-size: 1.8rem; }
+    
+    .timeline { padding-left: 1.5rem; }
+    .timeline-dot { left: calc(-1.5rem - 4px); }
+    
     .contato-container { flex-direction: column; gap: 2rem; }
 }
