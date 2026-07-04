@@ -35,7 +35,7 @@
     </header>
 
     <section id="hero" class="hero-premium">
-        <div class="bg-animado"></div>
+        <div id="tsparticles" class="bg-animado"></div>
 
         <div class="mac-window">
             <div class="mac-header">
@@ -356,6 +356,60 @@
             }
         });
     </script>
+    <!-- SCRIPT DO TSPARTICLES (Coloque antes de fechar o </body>) -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@2/tsparticles.engine.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-basic@2/tsparticles.basic.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-interaction-particles-links@2/tsparticles.interaction.particles.links.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-move-base@2/tsparticles.move.base.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-shape-circle@2/tsparticles.shape.circle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-color@2/tsparticles.updater.color.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-opacity@2/tsparticles.updater.opacity.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-size@2/tsparticles.updater.size.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
+    <script>
+        // Configuração da Malha de Conexões
+        tsParticles.load("tsparticles", {
+            fpsLimit: 60,
+            interactivity: {
+                events: {
+                    onHover: {
+                        enable: true,
+                        mode: "grab" // O mouse "puxa" as conexões ao passar por perto
+                    }
+                },
+                modes: {
+                    grab: {
+                        distance: 150,
+                        links: { opacity: 0.4 }
+                    }
+                }
+            },
+            particles: {
+                color: { value: "#38bdf8" }, // Cor Cyan usada no seu layout
+                links: {
+                    color: "#ffffff",
+                    distance: 130,
+                    enable: true,
+                    opacity: 0.1, // Linhas bem sutis
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 0.8, // Movimento lento e elegante
+                    direction: "none",
+                    outModes: { default: "bounce" }
+                },
+                number: {
+                    density: { enable: true, area: 800 },
+                    value: 60 // Quantidade de pontos
+                },
+                opacity: { value: 0.3 },
+                shape: { type: "circle" },
+                size: { value: { min: 1, max: 2 } }
+            },
+            detectRetina: true
+        });
+    </script>
 </body>
 </html>
